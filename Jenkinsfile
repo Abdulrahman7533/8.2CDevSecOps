@@ -25,6 +25,8 @@ pipeline {
             steps {
                 sh 'npm audit || true'
             }
+
+            // Check Jenkins again
         }
     }
 }
