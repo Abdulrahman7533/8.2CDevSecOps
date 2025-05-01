@@ -26,7 +26,7 @@ pipeline {
                 sh 'npm audit || true'
             }
 
-            // Check Jenkins again
+            // Check Jenkins
         }
     }
 }
