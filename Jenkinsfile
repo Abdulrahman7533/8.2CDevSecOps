@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Abdulrahman7533/8.2CDevSecOps.git'
+                checkout scm
             }
         }
         stage('Install Dependencies') {
@@ -18,13 +18,12 @@ pipeline {
         }
         stage('Generate Coverage Report') {
             steps {
-                // Ensure coverage report exists
                 sh 'npm run coverage || true'
             }
         }
         stage('NPM Audit (Security Scan)') {
             steps {
-                sh 'npm audit || true' 
+                sh 'npm audit || true'
             }
         }
     }
