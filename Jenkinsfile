@@ -1,6 +1,11 @@
 pipeline {
     agent any
-    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Abdulrahman7533/8.2CDevSecOps.git'
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
